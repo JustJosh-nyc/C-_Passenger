@@ -1,6 +1,47 @@
 #include <iostream> 
+#include <cstdlib>
+#include <ctime> 
+#include <string> 
 
 using namespace std; 
 
-int main(){ 
-}
+    class Flight{
+    
+        int flightnumber; 
+        string departureloc; 
+        string arrivalloc; 
+        string departtime; 
+        string arrivaltime; 
+        string airline; 
+
+        int generateflightnumber(){
+            srand(time(0)); 
+            return rand() % 1000 + 1; 
+        }
+    public : 
+        Flight(string departureloc, string arrivalloc, string departtime, string arrivaltime, string airline){
+            flightnumber = generateflightnumber(); 
+            departureloc = departureloc; 
+            arrivalloc = arrivalloc; 
+            departtime = departtime; 
+            arrivaltime = arrivaltime; 
+            airline = airline; 
+        }
+
+        void displayflightinfo(){
+            cout << "Flight Number: " << flightnumber << endl; 
+            cout << "Departure Location: " << departureloc << endl; 
+            cout << "Arrival Location: " << arrivalloc << endl; 
+            cout << "Departure Time: " << departtime << endl; 
+            cout << "Arrival Time: " << arrivaltime << endl; 
+            cout << "Airline: " << airline << endl; 
+        }
+            
+        }; 
+    int main(){ 
+        Flight Flight1("New York", "Los Angeles", "12:00", "14:00", "American Airlines");
+        Flight1.displayflightinfo(); 
+
+        return 0; 
+    }
+
